@@ -74,6 +74,10 @@
             <label for="exampleInputEmail1" class="form-label">Nama Belakang :</label>
             <input name="nama_belakang" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nama Belakang" placeholder="Masukan Nama Belakang">
         </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email :</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="Nama Belakang" placeholder="Masukan Email">
+        </div>
         <div class="form-group">
         <label for="exampleFormControlSelect1">Jenis Kelamin :</label>
         <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
@@ -92,7 +96,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a href="/siswa">Batal</a></button>
         <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
       </div>

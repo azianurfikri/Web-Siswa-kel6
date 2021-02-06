@@ -2,7 +2,7 @@
 <html lang="en" class="fullscreen-bg">
 
 <head>
-	<title>Login | Klorofil - Free Bootstrap Dashboard Template</title>
+	<title>Login | Sistem Informasi Siswa</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -52,8 +52,8 @@
 					<div class="right">
 						<div class="overlay"></div>
 						<div class="content text">
-							<h1 class="heading">Aplikasi Pengelolaan Data Siswa</h1>
-							<p>by Kelompok 5</p>
+							<h1 class="heading">Aplikasi Sistem Informasi Siswa</h1>
+							<p>by Kelompok 6</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
