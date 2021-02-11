@@ -14,7 +14,7 @@
                   <div class="panel-heading">
                     <h3 class="panel-title"><b>Edit Data</b></h3>
                 </div>
-                    <form action="/siswa/{{$siswa->id}}/update" method="POST">
+                    <form action="/siswa/{{$siswa->id}}/update" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
         {{csrf_field()}}
         <label for="exampleInputEmail1" class="form-label">Nama Depan :</label>
@@ -39,6 +39,9 @@
             <label for="exampleFormControlTextarea1" class="form-label">Alamat :</label>
             <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"placeholder="Tulis Alamat..." >{{$siswa->alamat}}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Avatar :</label>
+            <input name="avatar" class="form-control" type="file">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a href="/siswa">Batal</a></button>
