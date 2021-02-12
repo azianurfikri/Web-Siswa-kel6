@@ -20,7 +20,7 @@
 									<div class="profile-stat">
 										<div class="row">
 											<div class="col-md-4 stat-item">
-												45 <span>Projects</span>
+												{{$siswa->mapel->count()}} <span>Mapel</span>
 											</div>
 											<div class="col-md-4 stat-item">
 												15 <span>Awards</span>
@@ -34,8 +34,8 @@
 								<!-- END PROFILE HEADER -->
 								<!-- PROFILE DETAIL -->
 								<div class="profile-detail">
-									<div class="profile-info">
-										<h4 class="heading">Data diri</h4>
+									<div class="profile-info" style="margin-top: 15px">
+										<h4 class="heading" >Data diri</h4>
 										<ul class="list-unstyled list-justify">
 											<li>Jenis Kelamin <span>{{$siswa->jenis_kelamin}}</span></li>
 											<li>Agama <span>{{$siswa->agama}}</span></li>
@@ -47,35 +47,33 @@
 								<!-- END PROFILE DETAIL -->
 							</div>
 							<!-- END LEFT COLUMN -->
+							
 							<!-- RIGHT COLUMN -->
-    						<!-- TABBED CONTENT -->
-								<div class="custom-tabs-line tabs-line-bottom left-aligned">
-									<ul class="nav" role="tablist">
-										<li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Recent Activity</a></li>
-										</ul>
+    						<div class="panel">
+								<div class="panel-heading" style="padding-left: 400px">
+									<h3 class="panel-title" or>Mata Pelajaran</h3>
 								</div>
-								<div class="tab-content">
-									<div class="tab-pane fade in active" id="tab-bottom-left1">
-										<ul class="list-unstyled activity-timeline">
-											<li>
-												<i class="fa fa-comment activity-icon"></i>
-												<p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span></p>
-											</li>
-											<li>
-												<i class="fa fa-cloud-upload activity-icon"></i>
-												<p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
-											</li>
-											<li>
-												<i class="fa fa-plus activity-icon"></i>
-												<p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to project repository <span class="timestamp">Yesterday</span></p>
-											</li>
-											<li>
-												<i class="fa fa-check activity-icon"></i>
-												<p>Finished 80% of all <a href="#">assigned tasks</a> <span class="timestamp">1 day ago</span></p>
-											</li>
-										</ul>
-										<div class="margin-top-30 text-center"><a href="#" class="btn btn-default">See all activity</a></div>
-									</div>
+								<div class="panel-body" style="padding-left: 400px">
+									<table class="table table-stripe">
+										<thead>
+											<tr>
+												<th>Kode</th>
+												<th>NAMA</th>
+												<th>SEMESTER</th>
+												<th>NILAI</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach($siswa->mapel as $mapel)
+											<tr>
+												<td>{{$mapel->kode}}</td>
+												<td>{{$mapel->nama}}</td>
+												<td>{{$mapel->semester}}</td>
+												<td>{{$mapel->pivot->nilai}}</td>
+											</tr>
+											@endforeach
+										</tbody>
+									</table>
 								</div>
 								<!-- END TABBED CONTENT -->
 							</div>
