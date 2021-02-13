@@ -5,6 +5,15 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
+				@if(session('sukses'))
+        		<div class="alert alert-success" role="alert">
+        		{{session('sukses')}}
+				@endif
+
+				@if(session('error'))
+				<div class="alert alert-danger" role="alert">
+				{{session('error')}}
+				@endif
 					<div class="panel panel-profile">
 						<div class="clearfix">
 							<!-- LEFT COLUMN -->
@@ -49,11 +58,16 @@
 							<!-- END LEFT COLUMN -->
 							
 							<!-- RIGHT COLUMN -->
+							<div class="profile-right">
+							<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+								Tambah Nilai
+								</button>
     						<div class="panel">
-								<div class="panel-heading" style="padding-left: 400px">
+								<div class="panel-heading" >
 									<h3 class="panel-title" or>Mata Pelajaran</h3>
 								</div>
-								<div class="panel-body" style="padding-left: 400px">
+								<div class="panel-body">
 									<table class="table table-stripe">
 										<thead>
 											<tr>
@@ -84,4 +98,39 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Tambah nilai</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <form action="siswa/c{{$siswa->id}}/addnilai" method="POST">
+        <div class="mb-3">
+        {{csrf_field()}}
+		<div class="form-group">
+        <label for="mapel">Mata Pelajaran</label>
+        <select name="mapel"  class="form-control" id="mapel">
+		@foreach($matapelajaran as $mp)
+            <option value="{{$mp->id}}"> {{$mp->nama}}</option>
+		@endforeach
+        </select>
+        </div>
+            <label for="exampleInputEmail1" class="form-label">Nilai</label>
+            <input name="nilai" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nilai" placeholder="Masukan Nilai">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
 @stop
